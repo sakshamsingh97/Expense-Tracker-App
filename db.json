@@ -1,0 +1,18 @@
+{
+  "transactions": [
+    {
+      "desc": "salary",
+      "amount": "20000",
+      "date": "2021-04-01",
+      "category": "income",
+      "id": 1
+    },
+    {
+      "desc": "shopping",
+      "amount": "3500",
+      "date": "2021-04-10",
+      "category": "expense",
+      "id": 2
+    }
+  ]
+}

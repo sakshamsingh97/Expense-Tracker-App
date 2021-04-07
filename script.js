@@ -34,18 +34,24 @@ function getTransaction(){
                     if(item.category=='income'){
                         var sign="+";
                         total_income+=Number(item.amount);
+                        transactions+= `<li style="border-right:3px solid green;box-shadow:0 0 3px 3px rgb(112, 114, 112)" class="list-group-item mb-3"><h5>${sign} ${item.amount}<i onclick="deleteTransaction(${item.id})" style="float:right" class="fa fa-trash text-danger" aria-hidden="true"></i></h5>
+                                        <p class="ml">${item.desc}</p>
+                                        <p>${item.date}</p>
+                                        </li>`
                     }
                     else{
                         var sign="-";
                         total_expense+=Number(item.amount);
+                        transactions+= `<li style="border-right:3px solid red;box-shadow:0 0 3px 3px rgb(112, 114, 112)" class="list-group-item mb-3"><h5>${sign} ${item.amount}<i onclick="deleteTransaction(${item.id})" style="float:right" class="fa fa-trash text-danger" aria-hidden="true"></i></h5>
+                                        <p class="ml">${item.desc}</p>
+                                        <p>${item.date}</p>
+                                        </li>`
                     }
-                    transactions+= `<li class="list-group-item mb-2"><h5>${sign} ${item.amount}<i onclick="deleteTransaction(${item.id})" style="float:right" class="fa fa-trash text-danger" aria-hidden="true"></i></h5>
-                    <p class="ml">${item.desc}</p>
-                    </li>`
+                    
                     document.getElementById('transactionList').innerHTML=transactions;
-                    document.getElementById('income_value').innerHTML=total_income;
-                    document.getElementById('expense_value').innerHTML=total_expense;
-                    document.getElementById('balance').innerHTML=(total_income-total_expense);
+                    document.getElementById('income_value').innerHTML="&#8377;"+total_income;
+                    document.getElementById('expense_value').innerHTML="&#8377;"+total_expense;
+                    document.getElementById('balance').innerHTML="&#8377;"+(total_income-total_expense);
                 })
     });
 }
